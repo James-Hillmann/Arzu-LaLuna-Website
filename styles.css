@@ -93,10 +93,10 @@ a  { color: inherit; text-decoration: none; }
 }
 
 .btn-primary {
-  background-color: var(--color-accent);
+  background-color: #2d6b68;
   color: var(--color-white);
 }
-.btn-primary:hover { background-color: var(--color-accent-light); }
+.btn-primary:hover { background-color: #1a4a47; }
 
 .btn-secondary {
   background-color: transparent;
@@ -114,7 +114,6 @@ a  { color: inherit; text-decoration: none; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   background-color: #2d6b68;
-  border-left: 5px solid #7abf3e;
   transition: box-shadow var(--transition);
 }
 
@@ -261,12 +260,55 @@ a  { color: inherit; text-decoration: none; }
   margin: 2rem auto 0;
 }
 
+.hero-photo-slot {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
 .hero-main-photo {
   width: 100%;
+  height: 100%;
   border-radius: var(--radius-lg);
   display: block;
   object-fit: cover;
 }
+
+.hero-main-photo.slide {
+  position: absolute;
+  top: 0; left: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero-main-photo.slide.active {
+  opacity: 1;
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255,255,255,0.75);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #2d6b68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.slide-arrow:hover { background: rgba(255,255,255,0.95); }
+.slide-arrow--prev { left: 8px; }
+.slide-arrow--next { right: 8px; }
 
 .hero-tagline {
   font-size: 0.8rem;
@@ -275,6 +317,33 @@ a  { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   color: var(--color-accent-light);
   margin-bottom: 1rem;
+}
+
+.hero-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.hero-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #730505;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero-social-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.hero-social-link svg {
+  width: 28px;
+  height: 28px;
 }
 
 .hero-title {
@@ -535,7 +604,7 @@ a  { color: inherit; text-decoration: none; }
 
 /* ===== FOOTER ===== */
 .footer {
-  background-color: var(--color-accent);
+  background-color: #2d6b68;
   color: var(--color-white);
   padding: 2.5rem 0;
 }
@@ -584,4 +653,317 @@ a  { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   .gallery-grid { grid-template-columns: 1fr; }
   .classes-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== OUR PROGRAMS SECTION ===== */
+.our-programs {
+  background-color: #faf9fd;
+  padding: 96px 0;
+}
+
+.our-programs-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.our-programs-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #2d6b68;
+  margin-bottom: 0.6rem;
+}
+
+.our-programs-title {
+  font-family: 'Playfair Display', var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+}
+
+.our-programs-title-accent {
+  color: #2d6b68;
+}
+
+.our-programs-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Cards list */
+.program-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.program-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #2d6b68;
+  box-shadow: 0 4px 20px rgba(45, 107, 104, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(45, 107, 104, 0.14);
+}
+
+.program-card--featured {
+  border: 2px solid #2d6b68;
+}
+
+/* Image column */
+.program-card-image {
+  width: 200px;
+  background-color: #e6f2f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.program-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.program-silhouette {
+  width: 100px;
+  max-width: 100%;
+}
+
+/* Info column */
+.program-card-info {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Badge */
+.program-badge {
+  display: inline-block;
+  background-color: #e6f2f1;
+  color: #2d6b68;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.program-badge--gold {
+  background-color: #fef3d0;
+  color: #8a6010;
+}
+
+/* Card title */
+.program-card-title {
+  font-family: 'Playfair Display', var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  line-height: 1.3;
+}
+
+.program-full-badge {
+  display: inline-block;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+/* Schedule */
+.program-schedule {
+  color: #2d6b68;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Sessions */
+.program-sessions {
+  border-top: 1px solid #d4e8e7;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-session-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #eaf3f2;
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.program-session-row:last-child {
+  border-bottom: none;
+}
+
+.session-name {
+  font-weight: 600;
+  color: var(--color-text);
+  min-width: 120px;
+}
+
+.session-detail {
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+.session-price {
+  color: #1a4a47;
+  font-weight: 700;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.session-reg {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.program-session-text .session-detail-full {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Buttons */
+.program-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-sm {
+  padding: 0.55rem 1.4rem;
+  font-size: 0.8rem;
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: #2d6b68;
+  border: 1.5px solid #2d6b68;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background-color: #2d6b68;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .our-programs { padding: 64px 0; }
+
+  .program-card {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card-image {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-programs { padding: 48px 0; }
+  .program-session-row { flex-direction: column; gap: 0.25rem; }
+  .session-price { margin-left: 0; }
+}
+
+/* ===== PREVIOUS EVENTS SECTION ===== */
+.previous-events {
+  background-color: var(--color-bg);
+  padding: 96px 0;
+}
+
+.previous-events-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.event-photo-placeholder {
+  background-color: #e6f2f1;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+  border: 1px dashed #a8d0ce;
+}
+
+@media (max-width: 768px) {
+  .previous-events { padding: 64px 0; }
+  .events-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .previous-events { padding: 48px 0; }
+  .events-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== SUMMER CAMPS SECTION ===== */
+.summer-camps {
+  background-color: #faf9fd;
+  padding: 96px 0;
+}
+
+.summer-camps-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.camp-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #e6f2f1;
+  border-radius: 4px;
+  min-height: 120px;
+}
+
+@media (max-width: 768px) {
+  .summer-camps { padding: 64px 0; }
+}
+
+@media (max-width: 480px) {
+  .summer-camps { padding: 48px 0; }
 }

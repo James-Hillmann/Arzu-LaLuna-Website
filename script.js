@@ -19,6 +19,43 @@ window.addEventListener('scroll', () => {
     : 'none';
 });
 
+// ===== HERO PHOTO SLIDESHOW =====
+function startSlideshow(slotId, intervalMs) {
+  const slot = document.getElementById(slotId);
+  if (!slot) return;
+  const slides = slot.querySelectorAll('.slide');
+  let current = 0;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  const prevBtn = slot.querySelector('.slide-arrow--prev');
+  const nextBtn = slot.querySelector('.slide-arrow--next');
+
+  if (slides.length <= 1) {
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    return;
+  }
+
+  let timer = setInterval(() => goTo(current + 1), intervalMs);
+
+  function resetTimer(dir) {
+    clearInterval(timer);
+    goTo(current + dir);
+    timer = setInterval(() => goTo(current + 1), intervalMs);
+  }
+
+  prevBtn.addEventListener('click', () => resetTimer(-1));
+  nextBtn.addEventListener('click', () => resetTimer(1));
+}
+
+startSlideshow('photo-slot-left', 4000);
+startSlideshow('photo-slot-right', 5500);
+
 // ===== CONTACT FORM =====
 function handleSubmit(e) {
   e.preventDefault();
