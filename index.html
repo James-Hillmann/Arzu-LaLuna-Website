@@ -98,7 +98,7 @@
         <!-- Card 1: Level 1 Introduction -->
         <div class="program-card">
           <div class="program-card-image">
-            <img src="photos/level1.png" alt="Level 1 Introduction" />
+            <img src="photos/OurPrograms/level1.png" alt="Level 1 Introduction" />
           </div>
           <div class="program-card-info">
             <span class="program-badge">Ages 4–5</span>
@@ -122,7 +122,7 @@
               </div>
             </div>
             <div class="program-card-actions">
-              <a href="https://www.lalunagym.com/summer-camp" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Register at Kirkland Website ↗</a>
+              <a href="#contact" class="btn btn-primary btn-sm">Enroll Now</a>
             </div>
           </div>
         </div>
@@ -130,7 +130,7 @@
         <!-- Card 2: Level 2 Foundation -->
         <div class="program-card">
           <div class="program-card-image">
-            <img src="photos/level2.png" alt="Level 2 Foundation" />
+            <img src="photos/OurPrograms/level2.png" alt="Level 2 Foundation" />
           </div>
           <div class="program-card-info">
             <span class="program-badge">Ages 5–6</span>
@@ -146,7 +146,6 @@
             </div>
             <div class="program-card-actions">
               <a href="#contact" class="btn btn-primary btn-sm">Inquire</a>
-              <a href="tel:" class="btn btn-outline btn-sm">Call Us</a>
             </div>
           </div>
         </div>
@@ -154,7 +153,7 @@
         <!-- Card 3: Level 3/4 Development (FULL) -->
         <div class="program-card program-card--featured">
           <div class="program-card-image">
-            <img src="photos/level3.jpg" alt="Level 3/4 Development" />
+            <img src="photos/OurPrograms/level3.jpg" alt="Level 3/4 Development" />
           </div>
           <div class="program-card-info">
             <span class="program-badge program-badge--gold">Ages 6–7</span>
@@ -173,7 +172,6 @@
             </div>
             <div class="program-card-actions">
               <a href="#contact" class="btn btn-primary btn-sm">Join Waitlist</a>
-              <a href="tel:" class="btn btn-outline btn-sm">Call Us</a>
             </div>
           </div>
         </div>
@@ -186,17 +184,12 @@
   <section id="previous-events" class="section previous-events">
     <div class="container">
       <div class="previous-events-header">
-        <span class="our-programs-eyebrow">Highlights</span>
-        <h2 class="our-programs-title">Our Previous <span class="our-programs-title-accent">Events</span></h2>
-        <p class="our-programs-subtitle">A look back at competitions, showcases, and special moments.</p>
+        <span class="our-programs-eyebrow">What's Coming</span>
+        <h2 class="our-programs-title">Upcoming <span class="our-programs-title-accent">Events</span></h2>
+        <p class="our-programs-subtitle">Competitions, showcases, and special moments to look forward to.</p>
       </div>
       <div class="events-grid">
-        <div class="event-photo-placeholder"></div>
-        <div class="event-photo-placeholder"></div>
-        <div class="event-photo-placeholder"></div>
-        <div class="event-photo-placeholder"></div>
-        <div class="event-photo-placeholder"></div>
-        <div class="event-photo-placeholder"></div>
+        <div class="events-grid-item"><img src="photos/UpcomingEvents/PinkPeony.png" alt="Upcoming Event" /></div>
       </div>
     </div>
   </section>
@@ -440,38 +433,61 @@
 
 <!-- ===== CONTACT ===== -->
   <section id="contact" class="section contact">
-    <div class="container contact-grid">
-      <div class="contact-info">
-        <span class="section-label">Reach Us</span>
-        <h2 class="section-title">Get in Touch</h2>
-        <ul class="contact-details">
-          <li><strong>Address:</strong> 21333 SE 20th St, Sammamish, WA 98075 — <a href="https://maps.google.com/?q=21333+SE+20th+St+Sammamish+WA+98075" target="_blank" rel="noopener">Get directions ↗</a></li>
-          <li><strong>Phone:</strong> (425) 681-4303 — <a href="tel:+14256814303">Call now ↗</a></li>
-          <li><strong>Email:</strong> info@lalunagym.com — <a href="mailto:info@lalunagym.com">Send email ↗</a></li>
-        </ul>
-        <div class="social-links">
-          <a href="https://www.instagram.com/lalunasammamishrg/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
-          <a href="https://www.facebook.com/LalunaRhythmic" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
-        </div>
+    <div class="container">
+      <div class="contact-header">
+        <span class="our-programs-eyebrow">Reach Us</span>
+        <h2 class="our-programs-title">Get in <span class="our-programs-title-accent">Touch</span></h2>
+        <p class="our-programs-subtitle">We'd love to hear from you — reach out with any questions.</p>
       </div>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required />
+      <div class="contact-grid">
+        <div class="contact-info">
+          <ul class="contact-details">
+            <li>
+              <span class="contact-detail-label">Address</span>
+              <span class="contact-detail-value">21333 SE 20th St, Sammamish, WA 98075</span>
+              <a href="https://maps.google.com/?q=21333+SE+20th+St+Sammamish+WA+98075" target="_blank" rel="noopener" class="contact-detail-link">Get directions ↗</a>
+            </li>
+            <li>
+              <span class="contact-detail-label">Phone</span>
+              <span class="contact-detail-value">(425) 681-4303</span>
+              <a href="tel:+14256814303" class="contact-detail-link">Call now ↗</a>
+            </li>
+            <li>
+              <span class="contact-detail-label">Email</span>
+              <span class="contact-detail-value">info@lalunagym.com</span>
+              <a href="mailto:info@lalunagym.com" class="contact-detail-link">Send email ↗</a>
+            </li>
+          </ul>
+          <div class="social-links">
+            <a href="https://www.instagram.com/lalunasammamishrg/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+            <a href="https://www.facebook.com/LalunaRhythmic" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Send us a message..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p class="form-success" id="form-success">Thank you! We'll be in touch soon.</p>
-      </form>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Send us a message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-success" id="form-success">Thank you! We'll be in touch soon.</p>
+        </form>
+      </div>
     </div>
   </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img class="lightbox-media" id="lightbox-img" src="" alt="" />
+  </div>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
